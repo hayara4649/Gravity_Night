@@ -2,23 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateStage : MonoBehaviour
+public class StageScript : MonoBehaviour
 {
-    Vector3 vector;
-    public GameObject stage;
+    public float speed = 2.0f;
+    
     // Start is called before the first frame update
     void Start()
     {
-        vector=this.gameObject.transform.position;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        this.gameObject.transform.position -= new Vector3(0, 0, speed * Time.deltaTime);
     }
 
-    void Create(){
-        Instantiate(stage, vector, Quaternion.identity);
-    }
+    
 }
